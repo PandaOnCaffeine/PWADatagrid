@@ -1,3 +1,8 @@
-<p>file-upload works!</p>
+<!-- <p>file-upload works!</p>
 <label for="file">File:</label>
-<!-- <input type="file" (change)="upload($event)" accept=".png,.jpg" /> -->
+<input type="file" accept=".png,.jpg" />
+<button (click)="upload()"></button> -->
+
+<label for="formFile" class="form-label">Upload file example</label>
+<input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
+<button (click)="this.upload()" type="button" class="btn btn-primary mt-3">Upload</button>
