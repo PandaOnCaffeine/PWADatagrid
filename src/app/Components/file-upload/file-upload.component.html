@@ -1,8 +1,15 @@
-<!-- <p>file-upload works!</p>
-<label for="file">File:</label>
-<input type="file" accept=".png,.jpg" />
-<button (click)="upload()"></button> -->
-
-<label for="formFile" class="form-label">Upload file example</label>
-<input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
-<button (click)="this.upload()" type="button" class="btn btn-primary mt-3">Upload</button>
+<div class="total-container">
+    <div class="container">
+        <label class="custom-file-upload">
+            <input type="file" id="choose-file" accept="image/*" (change)="onFilechange($event)" />
+            Choose File
+        </label>
+        <label for="choose-file" class="choose-file-label">Selected File: {{file && file.name ? file.name : 'No file selected'}}</label>
+    </div>
+    <div class="container">
+        <img [src]="imgSrc" height="200">
+    </div>
+    <div class="container">
+        <button mat-button color="accent" (click)="openDialog()" type="button" class="backButton">Upload</button>
+    </div>
+</div>

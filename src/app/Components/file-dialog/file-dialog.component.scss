@@ -1,0 +1,39 @@
+.container {
+    overflow-y: hidden;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-size {
+    max-width: 25vw;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    margin: 15px 0 0 0;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}

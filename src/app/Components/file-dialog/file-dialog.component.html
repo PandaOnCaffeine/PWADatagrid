@@ -1,1 +1,22 @@
-<p>file-dialog works!</p>
+<!-- <div class="container"> -->
+<form [formGroup]="FileData" (ngSubmit)="Upload()" class="container">
+    <div class="input-container">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>File Name</mat-label>
+            <input matInput formControlName='FileName' placeholder="File Name">
+        </mat-form-field>
+    </div>
+    <div class="input-container">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>File Size</mat-label>
+            <input matInput formControlName='FileSize' placeholder="Size in Bytes">
+        </mat-form-field>
+    </div>
+    <div class="img-container">
+        <img class="img-size" [src]="imgSrc" alt="picture">
+    </div>
+    <div class="button-container">
+        <button mat-flat-button color="accent" type="submit">Gem</button>
+    </div>
+</form>
+<!-- </div> -->
