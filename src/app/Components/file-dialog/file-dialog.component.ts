@@ -9,7 +9,7 @@ import { UploadService } from '../../Services/upload.service';
 
 
 // Material
-import { MatDialog, MAT_DIALOG_DATA, } from '@angular/material/dialog'
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -35,10 +35,9 @@ export class FileDialogComponent implements OnInit {
   file = this.data.File;
   imgSrc: any;
 
-
-
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private upload: UploadService) { }
+  constructor(
+    public dialogRef: MatDialogRef<FileDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private upload: UploadService) { }
 
   ngOnInit(): void {
     this.imgSrc = URL.createObjectURL(this.data.File);
@@ -50,11 +49,15 @@ export class FileDialogComponent implements OnInit {
   }
 
   Upload() {
-
-    // this.upload.Upload().subscribe(result => {
-
-    // })
-
-    this.upload
+    const img: ImageFile = {
+      fileName: this.fileName,
+      fileSize: this.fileSize,
+      fileSrc: URL.createObjectURL(this.file),
+      file: this.file
+    }
+    this.upload.Upload(img).subscribe(result => {
+      console.log("Sucess");
+    })
+    this.dialogRef.close();
   }
 }

@@ -1,0 +1,19 @@
+.container {
+    height: 10vh;
+}
+
+.file-container{
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.file-img {
+    height: 10vh;
+    max-width: 30vw;
+}
+
+.file-info {
+    font-size: 18;
+}

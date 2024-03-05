@@ -15,13 +15,13 @@ export class UploadService {
   constructor() { }
 
 
-  Upload(file: ImageFile){
-    this.files?.push(file);
+  Upload(file: ImageFile):Observable<ImageFile[]> {
+    this.files.push(file);
     this.files$.next(this.files);
+    return this.filesData;
   }
 
   GetFiles():Observable<ImageFile[]>{
     return this.filesData;
   }
-
 }
